@@ -48,3 +48,24 @@
 
   margin: 0 12rem 12rem;
 }
+
+/* Features Section */
+.section-features {
+  margin-bottom: 12rem;
+  padding: 8rem 7.2rem;
+  background-color: var(--accents-coral-blue);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.features {
+  display: flex;
+  gap: 8.8rem;
+
+  height: 64rem;
+}
+
+.section-features > .section__title {
+  margin-bottom: 8rem;
+}
