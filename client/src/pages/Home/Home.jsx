@@ -8,6 +8,7 @@ import howImg2 from "../../assets/images/how-img-2.png";
 import howImg3 from "../../assets/images/how-img-3.png";
 import howImg4 from "../../assets/images/how-img-4.png";
 import Feature from "../../partials/Feature/Feature.jsx";
+import { ReactComponent as RightArrow } from "../../assets/images/rightArrow.svg";
 
 function Home() {
   const rowData = [
@@ -93,10 +94,12 @@ function Home() {
         </div>
         <div className="hero__btns">
           <Link to="/" className="btn-primary btn-primary__solid">
-            Find Your Home &rarr;
+            Find Your Home
+            <RightArrow />
           </Link>
           <Link to="/" className="btn-primary btn-primary__solid">
-            List Your Property &rarr;
+            List Your Property
+            <RightArrow />
           </Link>
         </div>
         <div className="hero__img-container">
@@ -128,6 +131,26 @@ function Home() {
           {featuresData.map(({ id, number, title, desc }) => (
             <Feature key={id} number={number} title={title} desc={desc} />
           ))}
+        </div>
+      </section>
+
+      <section className="section-cta">
+        <div className="cta__info">
+          <h2 className="section__title">
+            YOUR <em>TRUSTED</em> PARTNER IN
+            <br />
+            THE FUTURE <em>OF HOUSING</em>
+          </h2>
+          <p className="section__subtitle">
+            Our partnerships with governments and local banks ensure that our
+            housing prices are
+            <br />
+            affordable enough for our target market.
+          </p>
+          <Link to="/" className="btn-primary btn-primary__solid">
+            Join Our Community Today
+            <RightArrow />
+          </Link>
         </div>
       </section>
     </div>

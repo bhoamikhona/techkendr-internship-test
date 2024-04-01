@@ -69,3 +69,24 @@
 .section-features > .section__title {
   margin-bottom: 8rem;
 }
+
+/* CTA Section */
+.section-cta {
+  height: 108.6rem;
+  padding-top: 12rem;
+  background: url(../../assets/images/cta-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 8rem;
+}
+
+.cta__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-cta > .section__title > em {
+  font-weight: 600;
+}
