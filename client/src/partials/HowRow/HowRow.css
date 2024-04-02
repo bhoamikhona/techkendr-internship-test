@@ -42,6 +42,7 @@
   font-weight: 600;
   line-height: normal;
   color: var(--foundation-dark-blue);
+  white-space: nowrap;
 }
 
 .row__desc {
@@ -77,4 +78,24 @@
 
 .row.right > .row__info-container {
   align-items: flex-end;
+}
+
+@media (max-width: 67.1875em) {
+  .row.right {
+    /* flex-direction: row; */
+    text-align: center;
+  }
+
+  .row,
+  .row.right {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .row.right > .row__info-container,
+  .row__info-container {
+    align-items: center;
+  }
 }

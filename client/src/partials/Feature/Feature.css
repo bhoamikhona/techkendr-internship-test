@@ -62,3 +62,13 @@
 .feature:nth-child(4) {
   align-self: center;
 }
+
+@media (max-width: 87.125em) {
+  .feature:nth-child(1),
+  .feature:nth-child(2),
+  .feature:nth-child(3),
+  .feature:nth-child(4) {
+    align-self: center;
+    justify-self: center;
+  }
+}

@@ -90,3 +90,15 @@
 .section-cta > .section__title > em {
   font-weight: 600;
 }
+
+@media (max-width: 87.125em) {
+  .features {
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+}
