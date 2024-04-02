@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 import { ReactComponent as YouTube } from "../../assets/images/youtube-icon.svg";
 import { ReactComponent as Twitter } from "../../assets/images/twitter-icon.svg";
 import { ReactComponent as Instagram } from "../../assets/images/instagram-icon.svg";
@@ -87,12 +88,23 @@ function Footer() {
     },
   ];
 
-  const handleSubmit = function (e) {
+  const handleSubmit = async function (e) {
     e.preventDefault();
-    axios
-      .post("", { email })
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
+
+    if (!email) {
+      return toast.error("Enter an email");
+    }
+
+    try {
+      const response = await axios.post("http://localhost:8000/subscribe", {
+        email,
+      });
+      toast.success(response.data.message);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setEmail("");
   };
 
   return (
@@ -154,6 +166,7 @@ function Footer() {
                 autoComplete="off"
                 required
                 onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
               <button type="submit" className="submit-btn">
                 Subscribe

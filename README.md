@@ -11,6 +11,11 @@
 - React Router DOM
 - React Hot Toast
 - Axios
+- Express
+- MongoDB
+- Mongoose
+- Cors
+- Nodemon
 
 # Author
 
