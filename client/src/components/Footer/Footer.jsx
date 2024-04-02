@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { ReactComponent as YouTube } from "../../assets/images/youtube-icon.svg";
 import { ReactComponent as Twitter } from "../../assets/images/twitter-icon.svg";
 import { ReactComponent as Instagram } from "../../assets/images/instagram-icon.svg";
@@ -10,28 +11,7 @@ import { ReactComponent as Copyright } from "../../assets/images/copyright.svg";
 import { ReactComponent as RightArrow } from "../../assets/images/right-arrow.svg";
 
 function Footer() {
-  const socialsData = [
-    {
-      id: 1,
-      link: "https://www.youtube.com/",
-      icon: <YouTube />,
-    },
-    {
-      id: 2,
-      link: "https://twitter.com/?lang=en",
-      icon: <Twitter />,
-    },
-    {
-      id: 3,
-      link: "Instagram",
-      icon: <Instagram />,
-    },
-    {
-      id: 4,
-      link: "https://www.facebook.com/",
-      icon: <Facebook />,
-    },
-  ];
+  const [email, setEmail] = useState("");
 
   const quickLinks = [
     {
@@ -78,11 +58,42 @@ function Footer() {
       to: "/",
     },
     {
-      id: 1,
+      id: 3,
       linkName: "Request a Call Back",
       to: "/",
     },
   ];
+
+  const socialsData = [
+    {
+      id: 1,
+      link: "https://www.youtube.com/",
+      icon: <YouTube />,
+    },
+    {
+      id: 2,
+      link: "https://twitter.com/?lang=en",
+      icon: <Twitter />,
+    },
+    {
+      id: 3,
+      link: "Instagram",
+      icon: <Instagram />,
+    },
+    {
+      id: 4,
+      link: "https://www.facebook.com/",
+      icon: <Facebook />,
+    },
+  ];
+
+  const handleSubmit = function (e) {
+    e.preventDefault();
+    axios
+      .post("", { email })
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <footer className="footer">
@@ -127,7 +138,7 @@ function Footer() {
           </div>
           <div className="footer__subscribe">
             <h5 className="footer__list-title">Subscribe Us</h5>
-            <form className="footer__form">
+            <form className="footer__form" onSubmit={handleSubmit}>
               <span className="footer__form-desc">
                 Subscribe to our weekly newsletter
               </span>
@@ -141,6 +152,8 @@ function Footer() {
                 id="email"
                 placeholder="Email Id"
                 autoComplete="off"
+                required
+                onChange={(e) => setEmail(e.target.value)}
               />
               <button type="submit" className="submit-btn">
                 Subscribe

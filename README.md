@@ -9,6 +9,8 @@
 - JavaScript
 - React.js
 - React Router DOM
+- React Hot Toast
+- Axios
 
 # Author
 
