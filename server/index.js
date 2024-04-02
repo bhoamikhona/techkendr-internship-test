@@ -14,6 +14,18 @@ app.use(
     credentials: true,
   })
 );
+
+// fixing cors error
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://techkendr-internship-test.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 app.use(express.json());
 
 dotenv.config();
