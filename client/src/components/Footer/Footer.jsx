@@ -105,6 +105,7 @@ function Footer() {
       );
       toast.success(response.data.message);
     } catch (error) {
+      toast.error("Something went wrong, try again.");
       console.log(error);
     }
 

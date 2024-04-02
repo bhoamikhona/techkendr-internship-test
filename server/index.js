@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://techkendr-internship-test.vercel.app/"],
+    origin: ["https://techkendr-internship-test.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   })
