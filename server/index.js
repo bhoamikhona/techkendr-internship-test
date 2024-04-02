@@ -7,10 +7,18 @@ import { addSubscribe } from "./controllers/SubscribeController.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://techkendr-internship-test.vercel.app/"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 dotenv.config();
+
+app.get("/", (req, res) => res.send("Welcome"));
 
 mongoose
   .connect(process.env.DATABASE_URL)
