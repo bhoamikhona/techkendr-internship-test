@@ -98,6 +98,7 @@ function Footer() {
 
     try {
       const response = await axios.post(
+        // "http://localhost:8000/subscribe",
         "https://techkendr-internship-test-y1l2.vercel.app/subscribe",
         {
           email,

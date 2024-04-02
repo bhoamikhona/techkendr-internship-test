@@ -2,30 +2,17 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import SubscribeModel from "./models/SubscribeModel.js";
 import { addSubscribe } from "./controllers/SubscribeController.js";
 
 const app = express();
 
 app.use(
   cors({
-    origin: ["https://techkendr-internship-test.vercel.app"],
-    methods: ["GET", "POST"],
+    origin: "https://techkendr-internship-test.vercel.app",
+    // origin: "http://localhost:3000",
     credentials: true,
   })
 );
-
-// fixing cors error
-app.use(function (req, res, next) {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://techkendr-internship-test.vercel.app"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
-
 app.use(express.json());
 
 dotenv.config();
