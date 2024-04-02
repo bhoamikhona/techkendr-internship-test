@@ -88,6 +88,7 @@ function Footer() {
     },
   ];
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = async function (e) {
     e.preventDefault();
 
@@ -96,9 +97,12 @@ function Footer() {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/subscribe", {
-        email,
-      });
+      const response = await axios.post(
+        "https://techkendr-internship-test-y1l2.vercel.app/subscribe",
+        {
+          email,
+        }
+      );
       toast.success(response.data.message);
     } catch (error) {
       console.log(error);
