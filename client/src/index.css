@@ -4,6 +4,7 @@
   --foundation-dark-blue: #071a45;
   --foundation-light-blue: #3a7dff;
   --grey-scale-300: #c9c6c2;
+  --grey-scale-400: #979592;
   --accents-sea-blue: #2c8fb5;
   --accents-coral-blue: #d6e9f0;
 }
@@ -61,10 +62,6 @@ body {
   gap: 1.6rem;
 }
 
-.btn-primary:hover {
-  opacity: 0.5;
-}
-
 .btn-primary__outline {
   background-color: transparent;
   color: var(--foundation-dark-blue);
@@ -77,4 +74,23 @@ body {
   border: 1px solid var(--foundation-light-blue);
   border-radius: 4rem;
   color: var(--white);
+}
+
+.btn-primary__solid:hover {
+  background-color: #2e64cc;
+}
+
+.btn-primary__outline:hover {
+  border: 1px solid #2e64cc;
+  color: #2e64cc;
+}
+
+.btn-primary__outline.btn-light {
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+.btn-primary__outline.btn-light:hover {
+  color: var(--grey-scale-400);
+  border: 1px solid var(--grey-scale-400);
 }

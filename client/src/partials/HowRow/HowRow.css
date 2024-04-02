@@ -66,7 +66,7 @@
 
 .row__link:hover,
 .row__link:active {
-  opacity: 0.5;
+  color: var(--foundation-dark-blue);
 }
 
 /* RIGHT ALIGN */

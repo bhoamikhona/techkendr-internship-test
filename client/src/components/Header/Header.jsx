@@ -42,10 +42,10 @@ function Header() {
         </nav>
       </div>
       <div className="header__right">
-        <Link to="/" className="btn-primary btn-primary__outline">
+        <Link to="/" className="header__btns btn-primary btn-primary__outline">
           Sign Up
         </Link>
-        <Link to="/" className="btn-primary btn-primary__solid">
+        <Link to="/" className="header__btns btn-primary btn-primary__solid">
           Sign In
         </Link>
       </div>

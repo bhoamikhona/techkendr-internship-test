@@ -8,7 +8,7 @@ import howImg2 from "../../assets/images/how-img-2.png";
 import howImg3 from "../../assets/images/how-img-3.png";
 import howImg4 from "../../assets/images/how-img-4.png";
 import Feature from "../../partials/Feature/Feature.jsx";
-import { ReactComponent as RightArrow } from "../../assets/images/rightArrow.svg";
+import { ReactComponent as RightArrow } from "../../assets/images/right-arrow.svg";
 
 function Home() {
   const rowData = [
